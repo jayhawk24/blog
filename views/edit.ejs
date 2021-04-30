@@ -1,0 +1,49 @@
+<%- include('./header.ejs') %> <%- include('./navbar.ejs') %>
+
+<div class="container">
+    <h1 class="mt-5 mb-5">Edit Blog</h1>
+
+    <form
+        method="post"
+        action="/blog/<%= blog.id %>/?_method=patch"
+        class="row g-3 needs-validation"
+        novalidate
+    >
+        <div class="mb-3">
+            <label for="title" class="form-label">Blog Title</label>
+            <input
+                type="text"
+                name="title"
+                value="<%= blog.title %>"
+                class="form-control"
+                id="title"
+                required
+            />
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Blog Image</label>
+            <input
+                type="text"
+                name="image"
+                value="<%= blog.image %>"
+                class="form-control"
+                id="image"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <textarea
+                name="desc"
+                class="form-control"
+                id="desc"
+                rows="12"
+                required
+            >
+<%= blog.desc %></textarea
+            >
+        </div>
+        <br />
+        <input class="col-3 btn btn-primary" type="submit" value="Submit" />
+    </form>
+</div>
+<%- include('./footer.ejs') %>

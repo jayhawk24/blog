@@ -1,0 +1,34 @@
+<%- include('./header.ejs') %> <%- include('./navbar.ejs') %>
+<div class="container mt-5">
+    <div class="row">
+        <% for(let c of blogs) {%>
+
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-3 col-lg-3">
+                    <img class="img-fluid py-3" src="<%= c.image %>" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= c.title %></h5>
+                        <p class="card-text">
+                            <%= c.desc.substring(0,400)+"..." %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted"><%= c.author %></small>
+
+                            <a
+                                href="/blog/<%= c.id %> "
+                                class="btn btn-primary col-3 m-4"
+                                >View
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+    </div>
+</div>
+<%- include('footer.ejs') %>

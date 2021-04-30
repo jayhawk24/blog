@@ -1,0 +1,59 @@
+<%- include('./header.ejs') %> <%- include('./navbar.ejs') %>
+
+<div class="container">
+    <h1 class="mt-5 mb-5">New Blog</h1>
+
+    <form
+        method="post"
+        action="/blog"
+        class="row g-3 needs-validation"
+        novalidate
+    >
+        <div class="mb-3">
+            <label for="title" class="form-label">Blog Title</label>
+            <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                class="form-control"
+                id="title"
+                required
+            />
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Blog Author</label>
+            <input
+                type="text"
+                name="author"
+                placeholder="Author"
+                class="form-control"
+                id="author"
+                required
+            />
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Blog Image URL</label>
+            <input
+                type="text"
+                name="image"
+                placeholder="Image"
+                class="form-control"
+                id="image"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <textarea
+                name="desc"
+                placeholder="Description"
+                class="form-control"
+                id="desc"
+                rows="12"
+                required
+            ></textarea>
+        </div>
+        <br />
+        <input class="col-3 btn btn-primary" type="submit" value="Submit" />
+    </form>
+</div>
+<%- include('./footer.ejs') %>
