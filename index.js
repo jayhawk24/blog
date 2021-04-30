@@ -42,7 +42,6 @@ app.post('/blog', async (req, res) => {
 app.get('/blog/:id/', async (req, res) => {
     const { id } = req.params;
     const blog = await Blog.findById(id).populate('comments');
-    console.log(blog);
     res.render('show', { blog });
 });
 
